@@ -7,6 +7,10 @@ export const GlobalStyles = createGlobalStyle`
         box-sizing: border-box;
     }
 
+    body {
+        background: ${(props) => props.theme['background']};
+    }
+
     body, input, text-area, button {
         font-family: 'Roboto', sans-serif;
         font-size: 1rem;
@@ -18,11 +22,17 @@ export const GlobalStyles = createGlobalStyle`
         font-family: 'Baloo 2', cursive;
         font-weight: 800;
         color: ${(props) => props.theme['base-title']};
+        line-height: 130%;
     }
 
     :focus {
         outline: 0;
         box-shadow: 0 0 0 2px ${(props) => props.theme['yellow-dark']}
+    }
+
+    button {
+        background: none;
+        border: none;
     }
 
 `
