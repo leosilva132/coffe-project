@@ -1,8 +1,9 @@
 import { Buy, CardContainer, Description, Tags } from "./styles";
-import { ShoppingCartSimple } from 'phosphor-react'
 
 
 import coffeExpresso from '../../.../../../../../assets/Coffee-expresso.png'
+import { Counter } from "./Actions/Count";
+import { ButtonBuy } from "./Actions/ButtonBuy";
 
 
 export function Cards(){
@@ -15,14 +16,8 @@ export function Cards(){
                 <Description>O tradicional café feito com água quente e grãos moídos</Description>
                 <Buy>
                     <p>R$ <span>9,90</span></p>
-                    <input 
-                    type="number" 
-                    placeholder="1"
-                    min={1}
-                    />
-                    <button>
-                        <ShoppingCartSimple size={22} weight='fill' color="#F3F2F2"/>
-                    </button>
+                    <Counter />
+                    <ButtonBuy />
                 </Buy>
             </div>
         </CardContainer>

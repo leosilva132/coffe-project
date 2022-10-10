@@ -78,15 +78,7 @@ export const Buy = styled.div`
             font-size: 1.5rem;
         }
     }
-
-    input {
-        padding: 8px;
-        border: none;
-        background: ${(props) => props.theme['base-input']};
-        width: 72px;
-        height: 38px;
-        border-radius: 6px;
-    }
+/* 
 
     button{
         width: 38px;
@@ -97,5 +89,5 @@ export const Buy = styled.div`
         background: ${(props) => props.theme['purple-dark']};
         padding: 8px;
         border-radius: 6px;
-    }
+    } */
 `
