@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-import bannerIntro from "../../assets/Background.jpg"
+import bannerIntro from "../../../../assets/Background.jpg"
 
 const ICON_COLORS = {
     'yellow-light': 'yellow',

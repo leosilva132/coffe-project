@@ -1,7 +1,7 @@
 import { IconsIntro, IntroContainer, IntroIcons, IntroInfo, IntroItems } from "./styles";
 import { Coffee, Package, ShoppingCartSimple, Timer } from 'phosphor-react'
 
-import coffeImg from '../../assets/coffe-info-img.png'
+import coffeImg from '../../../../assets/coffe-info-img.png'
 
 
 
