@@ -7,13 +7,6 @@ export function Shop(){
             <h2>Nossos Cafés</h2>
             <div>
                 <Cards/>
-                <Cards/>
-                <Cards/>
-                <Cards/>
-                <Cards/>
-                <Cards/>
-                <Cards/>
-                <Cards/>
             </div>
         </ShopContainer>
     )

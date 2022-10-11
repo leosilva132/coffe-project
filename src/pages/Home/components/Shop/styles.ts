@@ -9,11 +9,4 @@ export const ShopContainer = styled.section`
         font-family: 'Baloo 2', sans-serif;
         font-weight: 800;
     }
-
-    &>div  {
-        display: grid;
-        grid-template-columns: repeat(4, 256px);
-        gap: 2rem;
-        max-width: 1120px;
-    }
 `

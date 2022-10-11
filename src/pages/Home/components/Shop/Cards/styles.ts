@@ -2,6 +2,11 @@ import styled from "styled-components";
 
 
 export const CardContainer = styled.div`
+    display: grid;
+    grid-template-columns: repeat(4, 256px);
+    gap: 2rem;
+
+    &>div {
     width: 100%;
     max-width: 256px;
     height: 310px;
@@ -34,7 +39,7 @@ export const CardContainer = styled.div`
         font-size: 1.25rem;
         margin-bottom: 0.5rem;
     }
-
+    }
 `
 
 export const Tags = styled.span`
@@ -78,16 +83,5 @@ export const Buy = styled.div`
             font-size: 1.5rem;
         }
     }
-/* 
 
-    button{
-        width: 38px;
-        height: 38px;
-        display: flex;
-        align-items: center;
-        cursor: pointer;
-        background: ${(props) => props.theme['purple-dark']};
-        padding: 8px;
-        border-radius: 6px;
-    } */
 `

@@ -19,14 +19,14 @@ export function Counter(){
     return (
         <InputContainer>
             <button 
-                onClick={()=> handleDrecrementCount()}
+                onClick={ () => handleDrecrementCount() }
                 disabled={count <= 1}
             >
             <Minus size={14} weight="bold"/>
             </button>
-                <input type="number" min={1} value={count}/>
+                <input type="number" min={1} value={count || "1"} readOnly/>
             <button 
-                onClick={()=> handleIncrementCount()}>
+                onClick={ ()  => handleIncrementCount() }>
                 <Plus size={14} weight="bold"/>
             </button>
         </InputContainer>
