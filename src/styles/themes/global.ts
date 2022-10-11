@@ -18,7 +18,7 @@ export const GlobalStyles = createGlobalStyle`
         -webkit-font-smoothing:  antialiased;
     }
 
-    h1 {
+    h1, h2 {
         font-family: 'Baloo 2', cursive;
         font-weight: 800;
         color: ${(props) => props.theme['base-title']};

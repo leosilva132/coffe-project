@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const ShopContainer = styled.section`
-    margin:  2rem auto 3.37rem auto;
+    margin: 2rem auto;
     max-width: 1120px;
 
     h2 {
@@ -11,9 +11,8 @@ export const ShopContainer = styled.section`
     }
 
     &>div  {
-        display: flex;
-        flex-wrap: wrap;
-        align-items: center;
+        display: grid;
+        grid-template-columns: repeat(4, 256px);
         gap: 2rem;
         max-width: 1120px;
     }

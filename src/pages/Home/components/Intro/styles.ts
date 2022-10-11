@@ -23,8 +23,8 @@ export const IntroContainer = styled.article`
     &>div  {
         display: flex;
         align-items: center;
-        margin: 0 auto;
-        max-width: 1120px;
+        justify-content: center;
+        flex-wrap: wrap;
         padding: 5.87rem 0;
         gap: 3.5rem;
     }
