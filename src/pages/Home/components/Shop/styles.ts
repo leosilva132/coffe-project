@@ -1,12 +1,13 @@
-import styled from "styled-components";
+import styled from 'styled-components'
 
 export const ShopContainer = styled.section`
-    margin: 2rem auto;
-    max-width: 1120px;
+  padding: 2rem;
+  margin: 2rem auto;
+  max-width: 74rem;
 
-    h2 {
-        font-size: 2rem;
-        font-family: 'Baloo 2', sans-serif;
-        font-weight: 800;
-    }
+  h2 {
+    font-size: 2rem;
+    font-family: 'Baloo 2', sans-serif;
+    font-weight: 800;
+  }
 `
