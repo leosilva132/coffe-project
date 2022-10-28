@@ -1,30 +1,16 @@
-import { useEffect, useState } from 'react'
-import { api } from '../../../../../lib/axios'
-
 import { Buy, CardContainer, Description, Tags } from './styles'
 import { Counter } from './Actions/Count'
 import { ButtonBuy } from './Actions/ButtonBuy'
-
-interface Products {
-  id: number
-  img: string
-  title: string
-  description: string
-  price: number
-}
+import { useContext } from 'react'
+import { CartContext } from '../../../../../contexts/CartContext'
 
 export function Cards() {
-  const [products, setProducts] = useState<Products[]>([])
+  const { products } = useContext(CartContext)
 
-  async function fetchProducts() {
-    const response = await api.get('/products')
-
-    setProducts(response.data)
-  }
-
-  useEffect(() => {
-    fetchProducts()
-  }, [])
+  const PriceFormatted = new Intl.NumberFormat('pt-BR', {
+    style: 'decimal',
+    minimumFractionDigits: 2,
+  })
 
   return (
     <CardContainer>
@@ -38,7 +24,7 @@ export function Cards() {
               <Description>{product.description}</Description>
               <Buy>
                 <p>
-                  R$ <span>{product.price}</span>
+                  R$ <span>{PriceFormatted.format(product.price)}</span>
                 </p>
                 <Counter />
                 <ButtonBuy />

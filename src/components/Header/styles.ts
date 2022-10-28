@@ -17,6 +17,7 @@ export const HeaderContainer = styled.header`
 
 export const Cartcontainer = styled.div`
   span {
+    padding: 5px;
     font-size: 12px;
     display: flex;
     align-items: center;
