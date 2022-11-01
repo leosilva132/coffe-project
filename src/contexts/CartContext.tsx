@@ -11,6 +11,7 @@ interface Products {
 
 interface ProductsContextTypes {
   products: Products[]
+  cart: Products[]
 }
 
 interface CartContextProviderProps {
@@ -21,20 +22,28 @@ export const CartContext = createContext({} as ProductsContextTypes)
 
 export function CartContextProvider({ children }: CartContextProviderProps) {
   const [products, setProducts] = useState<Products[]>([])
+  const [cart, setCart] = useState<Products[]>([])
 
   async function fetchProducts() {
     const response = await api.get('/products')
     setProducts(response.data)
   }
 
+  async function fetchProductsAmount() {
+    const response = await api.get('/stock')
+    setCart(response.data)
+  }
+
   useEffect(() => {
     fetchProducts()
+    fetchProductsAmount()
   }, [])
 
   return (
     <CartContext.Provider
       value={{
         products,
+        cart,
       }}
     >
       {children}
