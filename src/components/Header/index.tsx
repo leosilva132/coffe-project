@@ -8,8 +8,12 @@ import {
 import logoImg from '../../assets/logo-coffe.svg'
 import { MapPin, ShoppingCart } from 'phosphor-react'
 import { NavLink } from 'react-router-dom'
+import { useContext } from 'react'
+import { CartContext } from '../../contexts/CartContext'
 
 export function Header() {
+  const { cartAmount } = useContext(CartContext)
+
   return (
     <HeaderContainer>
       <NavLink to="/">
@@ -26,7 +30,7 @@ export function Header() {
             <ButtonCart>
               <ShoppingCart size={32} weight="fill" />
             </ButtonCart>
-            <span>1</span>
+            <span>{cartAmount}</span>
           </Cartcontainer>
         </NavLink>
       </div>

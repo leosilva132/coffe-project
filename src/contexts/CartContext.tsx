@@ -12,6 +12,8 @@ interface Products {
 interface ProductsContextTypes {
   products: Products[]
   cart: Products[]
+  cartAmount: number
+  UpdateCartAmount: () => void
 }
 
 interface CartContextProviderProps {
@@ -23,6 +25,7 @@ export const CartContext = createContext({} as ProductsContextTypes)
 export function CartContextProvider({ children }: CartContextProviderProps) {
   const [products, setProducts] = useState<Products[]>([])
   const [cart, setCart] = useState<Products[]>([])
+  const [cartAmount, setCartAmount] = useState(0)
 
   async function fetchProducts() {
     const response = await api.get('/products')
@@ -39,11 +42,17 @@ export function CartContextProvider({ children }: CartContextProviderProps) {
     fetchProductsAmount()
   }, [])
 
+  function UpdateCartAmount() {
+    setCartAmount(cartAmount + 1)
+  }
+
   return (
     <CartContext.Provider
       value={{
         products,
         cart,
+        cartAmount,
+        UpdateCartAmount,
       }}
     >
       {children}
