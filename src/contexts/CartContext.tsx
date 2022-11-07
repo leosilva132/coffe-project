@@ -18,35 +18,8 @@ export function CartContextProvider({ children }: CartContextProviderProps) {
   const [products, setProducts] = useState<Product[]>([])
   const [cart, setCart] = useState<Product[]>([])
 
-  const addProduct = async (productId: number) => {
-    try {
-      const updatedCart = [...cart]
-      const productExists = updatedCart.find(
-        (product) => product.id === productId,
-      )
+  const addProduct = async (productId: number) => {}
 
-      const stock = await api.get(`/stock/${productId}`)
-
-      const stockAmount = stock.data.amount
-      const currentAmount = productExists ? productExists.amount : 0
-      const amount = currentAmount + 1
-
-      if (amount > stockAmount) {
-        console.log('Quantidade fora de estoque')
-        return
-      } else {
-        const product = await api.get(`/products/${productId}`)
-        const newProduct = {
-          ...product.data,
-          amount: 1,
-        }
-        updatedCart.push(newProduct)
-      }
-      setCart(updatedCart)
-    } catch (err) {
-      console.error(err)
-    }
-  }
   async function fetchProducts() {
     const response = await api.get('/products')
     setProducts(response.data)
