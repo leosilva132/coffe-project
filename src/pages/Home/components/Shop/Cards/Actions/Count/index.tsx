@@ -2,7 +2,11 @@ import { InputContainer } from './syles'
 import { Plus, Minus } from 'phosphor-react'
 import { useState } from 'react'
 
-export function Counter() {
+interface counterProps {
+  amount: number
+}
+
+export function Counter({ amount }: counterProps) {
   const [count, setCount] = useState(1)
 
   function handleIncrementCount() {

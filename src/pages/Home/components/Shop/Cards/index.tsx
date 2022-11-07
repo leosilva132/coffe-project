@@ -11,7 +11,6 @@ export function Cards() {
     style: 'decimal',
     minimumFractionDigits: 2,
   })
-
   return (
     <CardContainer>
       {products.map((product) => {
@@ -26,8 +25,8 @@ export function Cards() {
                 <p>
                   R$ <span>{PriceFormatted.format(product.price)}</span>
                 </p>
-                <Counter />
-                <ButtonBuy />
+                <Counter amount={product.amount} />
+                <ButtonBuy id={product.id} />
               </Buy>
             </div>
           </div>
