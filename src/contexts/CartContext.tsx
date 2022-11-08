@@ -2,10 +2,15 @@ import { createContext, ReactNode, useEffect, useState } from 'react'
 import { api } from '../lib/axios'
 import { Product } from '../@types/productsTypes'
 
+interface updatedProduct {
+  productId: number
+  amount: number
+}
 interface ProductsContextTypes {
   products: Product[]
   cart: Product[]
   addProduct: (productId: number) => Promise<void>
+  updatedCartAmount: ({ productId, amount }: updatedProduct) => void
 }
 
 interface CartContextProviderProps {
@@ -52,6 +57,35 @@ export function CartContextProvider({ children }: CartContextProviderProps) {
     }
   }
 
+  const updatedCartAmount = async ({ productId, amount }: updatedProduct) => {
+    try {
+      if (amount <= 0) {
+        return
+      }
+
+      const stock = await api.get(`/stock/${productId}`)
+      const stockAmount = stock.data.amount
+
+      if (amount > stockAmount) {
+        console.log('Quantidade fora de estoque')
+      }
+
+      const updatedCart = [...cart]
+      const productExists = updatedCart.find(
+        (product) => product.id === productId,
+      )
+
+      if (productExists) {
+        productExists.amount = amount
+        setCart(updatedCart)
+      } else {
+        throw Error()
+      }
+    } catch (err) {
+      console.log(err)
+    }
+  }
+
   async function fetchProducts() {
     const response = await api.get('/products')
     setProducts(response.data)
@@ -67,6 +101,7 @@ export function CartContextProvider({ children }: CartContextProviderProps) {
         products,
         cart,
         addProduct,
+        updatedCartAmount,
       }}
     >
       {children}

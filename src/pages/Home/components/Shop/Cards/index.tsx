@@ -25,7 +25,7 @@ export function Cards() {
                 <p>
                   R$ <span>{PriceFormatted.format(product.price)}</span>
                 </p>
-                <Counter amount={product.amount} />
+                <Counter product={product} />
                 <ButtonBuy id={product.id} />
               </Buy>
             </div>

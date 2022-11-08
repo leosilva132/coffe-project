@@ -15,6 +15,7 @@ export function Header() {
   const { cart } = useContext(CartContext)
 
   const cartSize = cart.length
+
   return (
     <HeaderContainer>
       <NavLink to="/">
