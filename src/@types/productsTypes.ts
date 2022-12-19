@@ -5,6 +5,7 @@ export interface Product {
   description: string
   price: number
   amount: number
+  tag: string[]
 }
 
 export interface Stock {

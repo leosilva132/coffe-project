@@ -1,4 +1,4 @@
-import { Buy, CardContainer, Description, Tags } from './styles'
+import { Buy, CardContainer, Description, TagContainer, Tags } from './styles'
 import { Counter } from './Actions/Count'
 import { ButtonBuy } from './Actions/ButtonBuy'
 import { useContext } from 'react'
@@ -11,6 +11,7 @@ export function Cards() {
     style: 'decimal',
     minimumFractionDigits: 2,
   })
+
   return (
     <CardContainer>
       {products.map((product) => {
@@ -18,14 +19,19 @@ export function Cards() {
           <div key={product.id}>
             <img src={product.img} alt="" />
             <div>
-              <Tags>Tradicional</Tags>
+              <TagContainer>
+                {product.tag.map((tag) => {
+                  return <Tags key={product.id}>{tag}</Tags>
+                })}
+              </TagContainer>
+
               <h3>{product.title}</h3>
               <Description>{product.description}</Description>
               <Buy>
                 <p>
                   R$ <span>{PriceFormatted.format(product.price)}</span>
                 </p>
-                <Counter product={product} />
+                <Counter {...product} />
                 <ButtonBuy id={product.id} />
               </Buy>
             </div>

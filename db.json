@@ -2,7 +2,7 @@
     "stock": [
         {
           "id": 1,
-          "amount": 2
+          "amount": 3
         },
         {
           "id": 2,
@@ -41,6 +41,7 @@
         {
             "id": 1,
             "img": "./src/assets/Type=Expresso.png",
+            "tag": ["Tradicional"],
             "title": "Expresso Tradicional",
             "description": "O tradicional café feito com água quente e grãos moídos",
             "price" : 9.90
@@ -48,6 +49,7 @@
         {
             "id": 2,
             "img": "./src/assets/Type=Americano.png",
+            "tag": ["Tradicional"],
             "title": "Expresso Americano",
             "description": "Expresso diluído, menos intenso que o tradicional",
             "price" : 9.90
@@ -55,6 +57,7 @@
         {
             "id": 3,
             "img": "./src/assets/Type=ExpressoCremoso.png",
+            "tag": ["Tradicional"],
             "title": "Expresso Cremoso",
             "description": "Café expresso tradicional com espuma cremosa",
             "price" : 9.90
@@ -62,6 +65,7 @@
         {
             "id": 4,
             "img": "./src/assets/Type=CaféGelado.png",
+            "tag": ["Tradicional", "Gelado"],
             "title": "Expresso Gelado",
             "description": "Bebida preparada com café expresso e cubos de gelo",
             "price" : 9.90
@@ -69,6 +73,7 @@
         {
             "id": 5,
             "img": "./src/assets/Type=CafécomLeite.png",
+            "tag": ["Tradicional", "Com Leite"],
             "title": "Café com Leite",
             "description": "Meio a meio de expresso tradicional com leite vaporizado",
             "price" : 9.90
@@ -76,6 +81,7 @@
         {
             "id": 6,
             "img": "./src/assets/Type=Latte.png",
+            "tag": ["Tradicional", "Com Leite"],
             "title": "Latte",
             "description": "Uma dose de café expresso com o dobro de leite e espuma cremosa",
             "price" : 9.90
@@ -83,6 +89,7 @@
         {
             "id": 7,
             "img": "./src/assets/Type=Capuccino.png",
+            "tag": ["Tradicional", "Com Leite"],
             "title": "Capuccino",
             "description": "Bebida com canela feita de doses iguais de café, leite e espuma",
             "price" : 9.90
@@ -90,6 +97,7 @@
         {
             "id": 8,
             "img": "./src/assets/Type=Macchiato.png",
+            "tag": ["Tradicional", "Com Leite"],
             "title": "Macchiato",
             "description": "Café expresso misturado com um pouco de leite quente e espuma",
             "price" : 9.90
@@ -97,6 +105,7 @@
         {
             "id": 9,
             "img": "./src/assets/Type=Mochaccino.png",
+            "tag": ["Tradicional", "Com Leite"],
             "title": "Mocaccino",
             "description": "Café expresso com calda de chocolate, pouco leite e espuma",
             "price" : 9.90

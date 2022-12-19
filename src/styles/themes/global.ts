@@ -8,7 +8,7 @@ export const GlobalStyles = createGlobalStyle`
     }
 
     body {
-        background: ${(props) => props.theme['background']};
+        background: ${(props) => props.theme.background};
     }
 
     body, input, text-area, button {
@@ -22,6 +22,12 @@ export const GlobalStyles = createGlobalStyle`
         font-family: 'Baloo 2', cursive;
         font-weight: 800;
         color: ${(props) => props.theme['base-title']};
+    }
+
+    h4 {
+        font-family: 'Roboto', sans-serif;
+        font-weight: 400;
+        font-size: 1rem;
         line-height: 130%;
     }
 
@@ -38,5 +44,17 @@ export const GlobalStyles = createGlobalStyle`
     a {
         text-decoration: none;
     }
+
+    input::-webkit-outer-spin-button,
+    input::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+    }
+
+    /* Firefox */
+    input[type=number] {
+    -moz-appearance: textfield;
+    }
+
 
 `

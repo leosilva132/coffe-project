@@ -53,8 +53,14 @@ export const CardContainer = styled.div`
   }
 `
 
-export const Tags = styled.span`
-  position: relative;
+export const TagContainer = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+`
+
+export const Tags = styled.div`
   margin-bottom: 1rem;
   padding: 4px 8px;
   border-radius: 100px;

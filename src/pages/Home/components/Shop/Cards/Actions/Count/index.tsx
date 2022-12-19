@@ -4,10 +4,7 @@ import { useContext } from 'react'
 import { CartContext } from '../../../../../../../contexts/CartContext'
 import { Product } from '../../../../../../../@types/productsTypes'
 
-interface counterProps {
-  product: Product
-}
-export function Counter({ product }: counterProps) {
+export function Counter(product: Product) {
   const { updatedCartAmount } = useContext(CartContext)
 
   function handleIncrementCount(product: Product) {
@@ -23,7 +20,9 @@ export function Counter({ product }: counterProps) {
       <button onClick={() => handleDrecrementCount(product)}>
         <Minus size={14} weight="bold" />
       </button>
-      <input type="number" min={1} value={product.amount} readOnly />
+
+      <input type="number" value="1" readOnly />
+
       <button onClick={() => handleIncrementCount(product)}>
         <Plus size={14} weight="bold" />
       </button>

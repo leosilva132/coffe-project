@@ -82,7 +82,7 @@ export function CartContextProvider({ children }: CartContextProviderProps) {
         throw Error()
       }
     } catch (err) {
-      console.log(err)
+      console.log('o erro está caindo aqui')
     }
   }
 
