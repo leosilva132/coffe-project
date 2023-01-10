@@ -8,11 +8,11 @@ import {
   FieldUf,
   FormContainer,
   PagContainer,
-  PayElement,
   PaytypeContainer,
 } from './styles'
 
-import { CurrencyDollarSimple, MapPinLine, CreditCard } from 'phosphor-react'
+import { CurrencyDollarSimple, MapPinLine } from 'phosphor-react'
+import { PayMode } from './components/PayElement'
 
 export function Checkout() {
   return (
@@ -50,18 +50,9 @@ export function Checkout() {
             O pagamento é feito na entrega. Escolha a forma que deseja pagar
           </p>
           <PaytypeContainer>
-            <PayElement>
-              <CreditCard size={16} color="#8047F8" />
-              Cartão de Crédito
-            </PayElement>
-            <PayElement>
-              <CreditCard size={16} color="#8047F8" />
-              Cartão de Débito
-            </PayElement>
-            <PayElement>
-              <CreditCard size={16} color="#8047F8" />
-              Dinheiro
-            </PayElement>
+            <PayMode type="Cartão de Crédito" isActive={true} />
+            <PayMode type="Cartão de Débito" isActive={false} />
+            <PayMode type="Dinheiro" isActive={false} />
           </PaytypeContainer>
         </PagContainer>
       </DeliveryContainer>
