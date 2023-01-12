@@ -2,7 +2,8 @@ import styled from 'styled-components'
 
 export const CheckoutContainer = styled.main`
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
+  gap: 2rem;
 
   margin: 40px auto auto auto;
   max-width: 70rem;
@@ -15,9 +16,45 @@ export const DeliveryContainer = styled.div`
 `
 
 export const CoffeCardContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+
   h2 {
     font-size: 1.125rem;
     font-weight: 700;
+    margin-bottom: 15px;
+  }
+`
+export const RequestContainer = styled.form`
+  background-color: #f3f2f2;
+  padding: 40px;
+  border-radius: 6px 44px 6px 44px;
+
+  button {
+    background-color: #dbac2c;
+    width: 100%;
+    padding: 12px;
+    border-radius: 6px;
+    color: #f3f2f2;
+    text-transform: uppercase;
+    margin-top: 12px;
+    font-weight: bold;
+    font-size: 0.875rem;
+    cursor: pointer;
+
+    &:hover {
+      background-color: #c47f17;
+    }
+  }
+`
+export const ResumeRequestContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  margin-top: 24px;
+
+  div {
+    display: flex;
+    justify-content: space-between;
   }
 `
 

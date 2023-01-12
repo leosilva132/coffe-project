@@ -9,10 +9,13 @@ import {
   FormContainer,
   PagContainer,
   PaytypeContainer,
+  RequestContainer,
+  ResumeRequestContainer,
 } from './styles'
 
 import { CurrencyDollarSimple, MapPinLine } from 'phosphor-react'
 import { PayMode } from './components/PayElement'
+import { CoffeItem } from './components/CoffeItem'
 
 export function Checkout() {
   return (
@@ -58,6 +61,24 @@ export function Checkout() {
       </DeliveryContainer>
       <CoffeCardContainer>
         <h2>Cafés Selecionados</h2>
+        <RequestContainer>
+          <CoffeItem />
+          <ResumeRequestContainer>
+            <div>
+              <p>Total de itens</p>
+              <span>R$ 29,70</span>
+            </div>
+            <div>
+              <p>Entrega</p>
+              <span>R$ 3,50</span>
+            </div>
+            <div>
+              <p>Total</p>
+              <span>R$ 33,20</span>
+            </div>
+          </ResumeRequestContainer>
+          <button>Confirmar Pedido</button>
+        </RequestContainer>
       </CoffeCardContainer>
     </CheckoutContainer>
   )
